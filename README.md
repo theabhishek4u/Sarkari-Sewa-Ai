@@ -52,20 +52,51 @@ flowchart TD
 
 ---
 
-## 🚀 Quick Installation Guide
+---
 
-### Option 1: Install via WordPress Admin (Recommended)
+## 📦 How to Install in WordPress
 
-1. Download [`sarkari-sewa-ai.zip`](sarkari-sewa-ai.zip) from this repository.
-2. In your WordPress Admin dashboard, navigate to **Plugins → Add New → Upload Plugin**.
-3. Select `sarkari-sewa-ai.zip`, click **Install Now**, and then click **Activate Plugin**.
+### Method 1: WordPress Admin Dashboard (Easiest — 1 Minute)
+
+1. **Download Plugin ZIP:** Download the ready-to-use [`sarkari-sewa-ai.zip`](sarkari-sewa-ai.zip) from this repository.
+2. **Go to WordPress Admin:** Open your site's admin panel (e.g. `yourwebsite.com/wp-admin`).
+3. **Upload Plugin:**
+   - Navigate to **Plugins** → **Add New Plugin**.
+   - Click the **Upload Plugin** button at the top.
+   - Click **Choose File** and select `sarkari-sewa-ai.zip`.
+   - Click **Install Now**.
+4. **Activate:** Once uploaded, click **Activate Plugin**.
 
 ---
 
-### Option 2: Supabase Vector Database Setup (1 Minute)
+### Method 2: Via cPanel / Hostinger / FTP File Manager
+
+1. Open your hosting control panel (cPanel, Hostinger hPanel, DirectAdmin) or FTP client (FileZilla).
+2. Navigate to your WordPress root directory: `public_html/wp-content/plugins/`.
+3. Upload and extract the `sarkari-sewa-ai` directory here.
+   - Target path: `public_html/wp-content/plugins/sarkari-sewa-ai/sarkari-sewa-ai.php`
+4. Log in to your WordPress Admin dashboard, go to **Plugins → Installed Plugins**, find **Sarkari Sewa AI**, and click **Activate**.
+
+---
+
+### Method 3: Via WP-CLI (For Advanced Developers)
+
+```bash
+# Navigate to your WordPress root
+cd /var/www/html
+
+# Install and activate from the zip file
+wp plugin install /path/to/sarkari-sewa-ai.zip --activate
+```
+
+---
+
+## 🗄️ Supabase Vector Database Setup (2 Minutes)
+
+Before using semantic AI search, you need a free Supabase PostgreSQL database with `pgvector`:
 
 1. Create a free project at [Supabase.com](https://supabase.com).
-2. Open the **SQL Editor** in your Supabase dashboard and run the following setup script:
+2. Open the **SQL Editor** in your Supabase dashboard and run the following script:
 
 ```sql
 -- Enable vector extension
